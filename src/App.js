@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
 import Checkout from "./Checkout";
 import Home from "./Home";
-import { auth } from "./firebase";
+import { auth } from "./firebaseFile.js";
 import './App.css';
 
 
