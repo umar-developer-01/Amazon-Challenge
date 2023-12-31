@@ -1,21 +1,22 @@
 import React , {useEffect} from "react";
 import Header from "./Header";
+import Login from "./Login";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
 import Checkout from "./Checkout";
 import Home from "./Home";
-import { auth } from "./firebaseFile.js";
+import { auth,onAuthStateChanged } from "./firebaseFile.js";
 import './App.css';
 
 
 function App() {
-  const [, dispatch] = useStateValue();
+  const [{}, dispatch] = useStateValue();
 
 
 useEffect(() => {
   // will only run once when the app component loads...
 
-  auth.onAuthStateChanged((authUser) => {
+  onAuthStateChanged(auth,(authUser) => {
     console.log("THE USER IS >>> ", authUser);
 
     if (authUser) {
@@ -46,6 +47,12 @@ useEffect(() => {
               <Header/>
               <Checkout />
             </>
+            } 
+          />
+             <Route exact path="/login" element={ 
+             <>
+              <Login />
+             </>
             } 
           />
          <Route exact path="/" element={ 
