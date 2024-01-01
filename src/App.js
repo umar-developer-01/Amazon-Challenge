@@ -21,7 +21,6 @@ useEffect(() => {
 
     if (authUser) {
       // the user just logged in / the user was logged in
-
       dispatch({
         type: "SET_USER",
         user: authUser,
