@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
 import Checkout from "./Checkout";
 import Home from "./Home";
-import { auth,onAuthStateChanged } from "./firebaseFile.js";
+import { auth,onAuthStateChanged } from "./firebase.js";
 import './App.css';
 
 
